@@ -15,9 +15,9 @@ func main() {
 	delete := r.Methods("delete").Subrouter()
 
 	get.HandleFunc("/", home.Index)
-	//post.HandleFunc("/", home.Create)
-	//put.HandleFunc("/", home.Update)
-	//delete.HandleFunc("/", home.Delete)
+	post.HandleFunc("/", home.Index)
+	put.HandleFunc("/", home.Index)
+	delete.HandleFunc("/", home.Index)
 
 	http.Handle("/", r)
 	http.ListenAndServe(":8080", nil)
